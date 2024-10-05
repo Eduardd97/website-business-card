@@ -6,25 +6,26 @@ import mail from "../../assets/contacts/mail.svg";
 import git from "../../assets/contacts/git.svg";
 import phone from "../../assets/contacts/phone.svg";
 import avatar from "../../assets/avatar/photo_2024-09-17_20-16-29.jpg";
-import burger from "../../assets/nav-burger/burger-menu-svgrepo-com.svg"
-import closeIcon from "../../assets/nav-burger/close-svgrepo-com.svg"
+import burger from "../../assets/nav-burger/burger-menu-svgrepo-com.svg";
+import closeIcon from "../../assets/nav-burger/close-svgrepo-com.svg";
 
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export const HomePage = () => {
     const routers = [
-        {
-            title: "My Gallery",
-            path: "/gallery",
-        },
+        { title: "My Gallery", path: "/gallery" },
+        { title: "About me", path: "#" },
+        { title: "CV", path: "#" },
+        { title: "Certificates", path: "#" },
+        { title: "Contacts", path: "#" },
     ];
 
     const [menuOpen, setMenuOpen] = useState(false);
 
     const togleMenu = () => {
-        setMenuOpen(!menuOpen)
-    }
+        setMenuOpen(!menuOpen);
+    };
 
     const AlertPhone = () => {
         alert("My phone: +48-577-366-267");
@@ -33,6 +34,8 @@ export const HomePage = () => {
     const AlertEmeil = () => {
         alert("My email: kozeychukk1997@gmail.com");
     };
+
+    const galleryRoute = routers.find((route) => route.path === "/gallery");
 
     return (
         <div className='home-page-box'>
@@ -54,9 +57,9 @@ export const HomePage = () => {
                     </p>
                 </article>
             </div>
-            {routers.map((route, index) => (
-                <div className='cards' key={index}>
-                    <div className='card-box card-box-top' key={1}>
+            {galleryRoute && (
+                <div className='cards' key={galleryRoute.title}>
+                    <div className='card-box card-box-top'>
                         {" "}
                         <div className='card-list-item'>
                             <div className='border-fon'></div>
@@ -67,14 +70,17 @@ export const HomePage = () => {
                         <div className='card-list-item'>
                             <div className='gallery-name'>
                                 {" "}
-                                <Link className='gallery-title' to={route.path}>
-                                    <h3>{route.title}</h3>
+                                <Link
+                                    className='gallery-title'
+                                    to={galleryRoute.path}
+                                >
+                                    <h3>{galleryRoute.title}</h3>
                                 </Link>
                             </div>
                             <div className='gallery-preview'></div>
                         </div>
                     </div>
-                    <div className='card-box card-box-bottom' key={2}>
+                    <div className='card-box card-box-bottom'>
                         <div className='card-list-item'>
                             <section className='contacts'>
                                 <div className='contact'>
@@ -106,14 +112,24 @@ export const HomePage = () => {
                             </section>
                         </div>
                         <div className='card-list-item'>
-                            <img className="nav-burger-icon" src={menuOpen ? closeIcon : burger} alt="" onClick={togleMenu} />
+                            <img
+                                className='nav-burger-icon'
+                                src={menuOpen ? closeIcon : burger}
+                                alt=''
+                                onClick={togleMenu}
+                            />
                             {menuOpen && (
-                            <nav className="nav-burger">
-                                <Link className="nav-burger-list-item" to={route.path}><span>{route.title}</span></Link>
-                                <Link className="nav-burger-list-item"><span>About me</span></Link>
-                                <Link className="nav-burger-list-item"><span>Contacts</span></Link>
-                                {/* <Link className="nav-burger-list-item"><span></span></Link> */}
-                            </nav>
+                                <nav className='nav-burger'>
+                                    {routers.map((route, index) => (
+                                        <Link
+                                            key={route.title + index}
+                                            className='nav-burger-list-item'
+                                            to={route.path}
+                                        >
+                                            {route.title}
+                                        </Link>
+                                    ))}
+                                </nav>
                             )}
 
                             <div className='avatar'>
@@ -130,7 +146,7 @@ export const HomePage = () => {
                         </div>
                     </div>
                 </div>
-            ))}
+            )}
         </div>
     );
 };

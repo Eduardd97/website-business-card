@@ -1,4 +1,4 @@
-@media (max-width: 1500px)  {
+@media (max-width: 1500px) {
     .home-page-box {
         grid-template-columns: 1.2fr 2fr;
     }
@@ -26,7 +26,13 @@
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
+    .home-page-box {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+@media (max-width: 1250px) {
     .home-page-box {
         grid-template-columns: 1.2fr 2fr;
     }
@@ -51,17 +57,17 @@
         top: -160px;
     }
 
-    .home-page-box .cards .card-box:nth-child(1){
+    .home-page-box .cards .card-box:nth-child(1) {
         transform: rotate(0);
     }
-    .home-page-box .cards .card-box:nth-child(2){
+    .home-page-box .cards .card-box:nth-child(2) {
         transform: rotate(0);
     }
 
-    .home-page-box .cards .card-box:nth-child(1){
+    .home-page-box .cards .card-box:nth-child(1) {
         padding: 0;
     }
-    .home-page-box .cards .card-box:nth-child(2){
+    .home-page-box .cards .card-box:nth-child(2) {
         padding: 0;
     }
 
@@ -69,7 +75,7 @@
         height: 500px;
     }
     .home-page-box .cards .card-box:nth-child(1) .card-list-item:nth-child(2) {
-        border-radius: 25px 25px 0 0;
+        border-radius: 25px;
     }
     .home-page-box .cards .card-box:nth-child(2) .card-list-item:nth-child(2) {
         border-radius: 25px 25px 0 0;
@@ -162,7 +168,7 @@
 }
 
 @media (max-width: 700px) {
-    .home-page-box .cards  {
+    .home-page-box .cards {
         display: flex;
         flex-direction: column;
     }
