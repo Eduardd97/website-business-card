@@ -1,0 +1,284 @@
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100%) rotate(-15deg);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) rotate(-15deg);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(100%) rotate(-15deg);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) rotate(-15deg);
+        opacity: 1;
+    }
+}
+
+/* ------------------------------------------------------------------------ */
+
+.home-page-box {
+    background-color: rgba(255, 227, 178, 1);
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    gap: 50px;
+}
+
+.home-page-box .brief-information {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 50px 0 0 50px;
+    gap: 40px;
+}
+
+.home-page-box .brief-information .coding-Logo {
+    width: 200px;
+    height: 200px;
+}
+
+.home-page-box .brief-information .brief-information-about-me {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: justify;
+}
+
+.home-page-box .brief-information .brief-information-about-me h1 {
+    font-size: 80px;
+}
+
+.home-page-box .cards {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.home-page-box .cards .card-box {
+    width: 100%;
+    display: grid;
+    gap: 50px;
+    transform: rotate(-15deg);
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.home-page-box .cards .card-box-top {
+    animation-name: slideInFromTop;
+}
+
+.home-page-box .cards .card-box-bottom {
+    animation-name: slideInFromBottom;
+}
+
+.home-page-box .cards .card-box:nth-child(1) {
+    position: absolute;
+    top: -260px;
+    padding: 0 0 0 110px; 
+}
+
+.home-page-box .cards .card-box:nth-child(2) {
+    position: absolute;
+    top: -480px;
+    right: -350px;
+    padding: 0 0 0 50px;
+}
+
+.home-page-box .cards .card-box .card-list-item {
+    width: 300px;
+    height: 600px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.home-page-box .cards .card-box:nth-child(1) .card-list-item:nth-child(1) {
+    background-image: url(../../assets/background-tropic.jpg);
+}
+
+.home-page-box .cards .card-box .card-list-item .border-fon {
+    width: 50%;
+    height: 60%;
+    border: 1px solid rgba(114, 118, 105, 1);
+    border-radius: 100px;
+    z-index: 1;
+    position: absolute;
+    bottom: 50px;
+}
+
+.home-page-box .cards .card-box .card-list-item .greetings {
+    position: absolute;
+    z-index: 5;
+    font-size: 78px;
+    bottom: 90px;
+    text-align: center;
+    color: rgba(253, 242, 225, 1);
+}
+
+.home-page-box .cards .card-box .card-list-item:nth-child(1) {
+    background-color: rgba(255, 242, 223, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-page-box .cards .card-box .card-list-item .contacts {
+    bottom: 0px;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    position: absolute;
+    gap: 25px;
+    padding: 0 40px 0 40px;
+    justify-content: center;
+    align-items: center;
+    bottom: 100px;
+    z-index: 5;
+}
+.home-page-box .cards .card-box .card-list-item .contacts:nth-child(2) {
+    bottom: 25px;
+    z-index: 1;
+}
+
+.home-page-box .cards .card-box .card-list-item .contacts .contact {
+    width: 110px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-page-box .cards .card-box .card-list-item .contacts .contact img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.home-page-box .cards .card-box .card-list-item:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(33, 99, 91, 1);
+}
+
+.home-page-box .cards .card-box .card-list-item .gallery-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    font-size: 25px;
+}
+
+.home-page-box .cards .card-box .card-list-item .gallery-name .gallery-title {
+    cursor: pointer;
+    text-decoration: none;
+    color: rgba(253, 242, 225, 1);
+}
+
+.home-page-box
+    .cards
+    .card-box
+    .card-list-item
+    .gallery-name
+    .gallery-title:hover {
+    text-decoration: underline;
+}
+
+.home-page-box .cards .card-box .card-list-item .gallery-preview {
+    width: 100%;
+    height: 450px;
+    background-image: url(../../assets/gallery/gallery-background.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 0 25px 25px;
+}
+
+.home-page-box .cards .card-box:nth-child(2) .card-list-item:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.home-page-box .cards .card-box .card-list-item .nav-burger-icon {
+    width: 35px;
+    height: 35px;
+    background-color: rgba(246, 194, 116, 1);
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.home-page-box .cards .card-box .card-list-item .nav-burger {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    height: 150px;
+    border-radius: 10px;
+    border: 1px solid rgb(252, 200, 123);
+    background-color: rgba(246, 194, 116, 1);
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    gap: 10px;
+}
+
+.home-page-box
+    .cards
+    .card-box
+    .card-list-item
+    .nav-burger
+    .nav-burger-list-item {
+    text-decoration: none;
+    color: rgba(253, 242, 225, 1);
+    font-size: 18px;
+}
+.home-page-box
+    .cards
+    .card-box
+    .card-list-item
+    .nav-burger
+    .nav-burger-list-item:hover {
+    text-decoration: underline;
+}
+
+.home-page-box .cards .card-box .card-list-item .avatar {
+    width: 70%;
+    height: 30%;
+    margin: 50px 0 0 0;
+}
+
+.home-page-box .cards .card-box .card-list-item .avatar .my-avatar {
+    max-width: 100%;
+    border-radius: 150px;
+}
+
+.home-page-box .cards .card-box .card-list-item .about-me {
+    width: 100%;
+    height: 70%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    color: rgba(253, 242, 225, 1);
+    font-size: 30px;
+}
