@@ -165,6 +165,9 @@ export const Gallery = () => {
 
                 <div className='gallery-box'>
                     <Carousel slides={slides} />
+
+                    <h2 style={{color: "#fff", borderBottom: "1px solid #fff"}}>My projects</h2>
+
                     <div className='my-portfolio'>
                         {currentProjects.map((project, index) => (
                             <div className='site-link' key={index}>
