@@ -177,3 +177,10 @@
         animation: none;
     }
 }
+
+@media (max-width: 500px) {
+    .home-page-box .cards .card-box .card-list-item .greetings {
+        font-size: 70px;
+    }
+}
+

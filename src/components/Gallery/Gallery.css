@@ -121,5 +121,8 @@
         width: 100%;
         padding: 25px;
     }
+    .css-j400xw-MuiPaper-root-MuiDrawer-paper {
+        width: 80%;
+    }
 }
 
