@@ -18,7 +18,6 @@ import weatherIcons from "../../assets/carouselIcon/weather.png";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Pagination from "@mui/material/Pagination";
 import { Button, Drawer } from "@mui/material";
-import { makeStyles } from '@mui/styles';
 
 import projects from "../../projects";
 
@@ -127,14 +126,6 @@ export const Gallery = () => {
         };
     }, []);
 
-    const useStyles = makeStyles({
-        drawerPaper: {
-            width: '240px', // Установите желаемую ширину здесь
-        },
-    });
-
-    const classes = useStyles();
-
     return (
         <div>
             <Header />
@@ -158,7 +149,11 @@ export const Gallery = () => {
                                 anchor={anchor}
                                 open={state[anchor]}
                                 onClose={toggleDrawer(anchor, false)}
-                                classes={{ paper: classes.drawerPaper }}
+                                sx={{
+                                    "& .MuiDrawer-paper": {
+                                        width: "240px", // Установите желаемую ширину здесь
+                                    },
+                                }}
                             >
                                 {list(anchor)}
                             </Drawer>
