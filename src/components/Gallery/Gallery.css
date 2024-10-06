@@ -89,10 +89,6 @@
     width: 100%;
 }
 
-.css-j400xw-MuiPaper-root-MuiDrawer-paper {
-    width: 30%;
-}
-
 @media (max-width: 900px) {
     .gallery-box .my-portfolio .site-link {
         flex-direction: column;

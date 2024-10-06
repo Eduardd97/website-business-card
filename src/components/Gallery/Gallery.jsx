@@ -17,7 +17,7 @@ import weatherIcons from "../../assets/carouselIcon/weather.png";
 
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Pagination from "@mui/material/Pagination";
-import { Button, Drawer } from '@mui/material';
+import { Button, Drawer } from "@mui/material";
 
 import projects from "../../projects";
 
@@ -35,7 +35,9 @@ const slides = [
 
 export const Gallery = () => {
     const itemsPerPage = 4; // Количество элементов на странице
-    const [currentPage, setCurrentPage] = useState(parseInt(localStorage.getItem('currentPage')) || 1);
+    const [currentPage, setCurrentPage] = useState(
+        parseInt(localStorage.getItem("currentPage")) || 1
+    );
     const [state, setState] = useState({
         left: false,
         right: false,
@@ -51,11 +53,14 @@ export const Gallery = () => {
 
     const handlePageChange = (event, value) => {
         setCurrentPage(value);
-        localStorage.setItem('currentPage', value); // Сохранение текущей страницы в localStorage
+        localStorage.setItem("currentPage", value); // Сохранение текущей страницы в localStorage
     };
 
     const toggleDrawer = (anchor, open) => (event) => {
-        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+        if (
+            event.type === "keydown" &&
+            (event.key === "Tab" || event.key === "Shift")
+        ) {
             return;
         }
 
@@ -115,9 +120,9 @@ export const Gallery = () => {
             setIsMobile(window.innerWidth < 600);
         };
 
-        window.addEventListener('resize', handleResize);
+        window.addEventListener("resize", handleResize);
         return () => {
-            window.removeEventListener('resize', handleResize);
+            window.removeEventListener("resize", handleResize);
         };
     }, []);
 
@@ -127,23 +132,33 @@ export const Gallery = () => {
             <div className='button-container'>
                 {isMobile && (
                     <>
-                        <Button onClick={toggleDrawer('left', true)}>Skils Left</Button>
-                        <Button onClick={toggleDrawer('right', true)}>Skils Right</Button>
+                        <Button onClick={toggleDrawer("left", true)}>
+                            Skils Left
+                        </Button>
+                        <Button onClick={toggleDrawer("right", true)}>
+                            Skils Right
+                        </Button>
                     </>
                 )}
             </div>
             <div className='gallery-content-box'>
-                {isMobile && (['left', 'right'].map((anchor) => (
-                    <React.Fragment key={anchor}>
-                        <Drawer
-                            anchor={anchor}
-                            open={state[anchor]}
-                            onClose={toggleDrawer(anchor, false)}
-                        >
-                            {list(anchor)}
-                        </Drawer>
-                    </React.Fragment>
-                )))}
+                {isMobile &&
+                    ["left", "right"].map((anchor) => (
+                        <React.Fragment key={anchor}>
+                            <Drawer
+                                anchor={anchor}
+                                open={state[anchor]}
+                                onClose={toggleDrawer(anchor, false)}
+                                sx={{
+                                    "& .MuiDrawer-paper": {
+                                        width: "240px", // Установите желаемую ширину здесь
+                                    },
+                                }}
+                            >
+                                {list(anchor)}
+                            </Drawer>
+                        </React.Fragment>
+                    ))}
 
                 {/* Отображение списка навыков при ширине экрана больше 600 пикселей */}
                 {!isMobile && list()}
@@ -153,7 +168,10 @@ export const Gallery = () => {
                     <div className='my-portfolio'>
                         {currentProjects.map((project, index) => (
                             <div className='site-link' key={index}>
-                                <a className='site-link-Icon' href={project.link}>
+                                <a
+                                    className='site-link-Icon'
+                                    href={project.link}
+                                >
                                     <img
                                         src={project.icon}
                                         alt='link-icon'
