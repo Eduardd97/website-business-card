@@ -120,15 +120,11 @@ function ResponsiveAppBar() {
                     </Box>
 
                     {homePage && (
-                        <Box sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}>
+                        <Box
+                            sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
+                        >
                             {" "}
-                            <Link
-                                to={homePage.path}
-                                sx={{
-                                    display: { xs: "none", md: "flex" },
-                                    mr: 1,
-                                }}
-                            >
+                            <Link to={homePage.path}>
                                 <img
                                     src={codingLogo}
                                     alt='codingLogo'

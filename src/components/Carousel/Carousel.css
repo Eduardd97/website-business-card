@@ -1,0 +1,71 @@
+.carousel-container {
+    width: 90%;
+    height: max-content;
+    position: relative;
+}
+
+.carousel-container .slide {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-container .slide .image {
+    width: 100%;
+    height: 450px;
+    object-position: center;
+    backface-visibility: hidden;
+
+    image-rendering: crisp-edges; /* For modern browsers */
+
+}
+
+.carousel-container .carousel-button {
+    position: absolute;
+    font-size: 40px;
+    background: local;
+    border: none;
+    cursor: pointer;
+}
+
+.carousel-container .carousel-button:nth-child(1) {
+    top: 50%;
+    left: 20px;
+}
+.carousel-container .carousel-button:nth-child(3) {
+    top: 50%;
+    right: 20px;
+}
+
+@media (max-width: 1400px) {
+    .carousel-container .carousel-button:nth-child(1) {
+        top: 45%;
+    }
+    .carousel-container .carousel-button:nth-child(3) {
+        top: 45%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .carousel-container .slide .image {
+        height: 350px;
+    }
+}
+
+@media (max-width: 850px) {
+    .carousel-container .slide .image {
+        height: 250px;
+    }
+
+    .carousel-container .carousel-button:nth-child(1) {
+        top: 40%;
+    }
+    .carousel-container .carousel-button:nth-child(3) {
+        top: 40%;
+    }
+}
+
+@media (max-width: 500px) {
+    .carousel-container .slide .image {
+        height: 200px;
+    }
+}

@@ -1,25 +1,22 @@
 .gallery-content-box {
     display: flex;
     height: 100%;
-    width: 100%;flex-direction: column;
+    width: 100%;
 }
 
 .gallery-skills-box {
     width: 25%;
     background-color: #21635b;
-    height: 100%;
     display: flex;
     flex-direction: column;
     padding: 20px;
     gap: 25px;
+    color: #fff;
 }
 
 .gallery-skills-box .profession {
     padding: 0 0 0 15px;
-}
-
-.gallery-skills-box .ul {
-    list-style-type: disc;
+    font-size: 18px;
 }
 
 .gallery-skills-box .profession li {
@@ -37,8 +34,76 @@
     padding: 5px 0 0 15px;
 }
 
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    background-color: gray;
+    color: #fdf2e1;
+}
+
+.button-container button {
+    color: #fff;
+}
+
 .gallery-box {
     width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0 30px 0;
+    background-color: rgb(179, 179, 179);
+    gap: 30px;
+}
+
+.gallery-box .my-portfolio {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.gallery-box .my-portfolio .site-link {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
+.gallery-box .my-portfolio .site-link .site-link-Icon {
+    width: 50%;
+    
+}
+
+.gallery-box .my-portfolio .site-link .site-link-Icon .link-icon {
+    width: 100%;
+}
+
+.gallery-box .my-portfolio .site-link .site-description-box {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.gallery-box .my-portfolio .site-link .site-description-box .site-description {
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .gallery-box .my-portfolio .site-link {
+        flex-direction: column;
+        border-bottom: 1px solid black;
+        padding: 0 0 10px 0;
+    }
+
+    .gallery-box .my-portfolio .site-link .site-link-Icon {
+        width: 100%;
+    }
+
+    .gallery-box .my-portfolio .site-link .site-description-box {
+        width: 100%;
+    }
+    
 }
 
 @media (max-width: 700px) {
@@ -47,3 +112,14 @@
         padding: 20px 5px 20px 5px;
     }
 }
+
+@media (max-width: 600px) {
+    .gallery-box {
+        width: 100%;
+    }
+    .gallery-skills-box {
+        width: 100%;
+        padding: 25px;
+    }
+}
+
