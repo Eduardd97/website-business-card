@@ -15,7 +15,7 @@ import { useState } from "react";
 export const HomePage = () => {
     const routers = [
         { title: "My Gallery", path: "/gallery" },
-        { title: "About me", path: "#" },
+        { title: "About me", path: "/about-me" },
         { title: "CV", path: "#" },
         { title: "Certificates", path: "#" },
         { title: "Contacts", path: "#" },

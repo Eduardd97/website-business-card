@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 import codingLogo from "../../assets/logoWite.png";
 import avatar from "../../assets/avatar/photo_2024-09-17_20-16-29.jpg";
 
-function ResponsiveAppBar() {
+function Header() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
 
     const handleOpenNavMenu = (event) => {
@@ -30,7 +30,7 @@ function ResponsiveAppBar() {
 
     const routers = [
         { title: "Home Page", path: "/" },
-        { title: "About me", path: "#" },
+        { title: "About me", path: "/about-me" },
         { title: "CV", path: "#" },
         { title: "Certificates", path: "#" },
         { title: "Contacts", path: "#" },
@@ -195,4 +195,4 @@ function ResponsiveAppBar() {
         </AppBar>
     );
 }
-export default ResponsiveAppBar;
+export default Header;
