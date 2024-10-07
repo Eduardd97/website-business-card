@@ -2,14 +2,14 @@ import Header from "../Header/Header";
 
 import "./AboutMe.css";
 import backgroundAboutMePhoto from "../../assets/aboutMe/about-me-pfoto.jpg";
-import aboutMeAvatar from "../../assets/aboutMe/about-me-avatar.png";
+import aboutMeAvatar from "../../assets/aboutMe/about-me-avatar.jpg";
 import Footer from "../Footer/Footer";
 
 export const AboutMe = () => {
     return (
         <div>
             <Header />
-            
+
             <div className='about-me-conteyner'>
                 <div className='about-me-content-box'>
                     <div className='background-about-me-photo'>
