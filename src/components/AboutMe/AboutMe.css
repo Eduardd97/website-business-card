@@ -81,21 +81,6 @@
     text-align: center;
 }
 
-/* .about-me-conteyner .about-me-content-box .about-me-section .about-me .hobies {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    grid-gap: 10px;
-}
-
-.about-me-conteyner .about-me-content-box .about-me-section .about-me .hobies .hobies-icon {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    object-position: center;
-    position: relative; 
-    display: inline-block; 
-} */
-
 .about-me-conteyner .about-me-content-box .about-me-section .about-me .hobies {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -135,7 +120,7 @@
     position: absolute; /* Позиционируем текст поверх картинки */
     top: 50%; /* Центрируем по вертикали */
     left: 50%; /* Центрируем по горизонтали */
-    transform: translate(-60.5%, -50%); /* Центрирование текста */
+    transform: translate(-55%, -50%); /* Центрирование текста */
     color: white; /* Цвет текста */
     background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон для текста */
     border-radius: 5px; /* Скругление углов */
@@ -155,31 +140,6 @@
     .hobies-text {
     opacity: 1; /* Сделать текст видимым при наведении на родительский контейнер */
 }
-
-/* @media (max-width: 1400px) {
-    .about-me-conteyner
-        .about-me-content-box
-        .about-me-section
-        .about-me
-        .hobies
-        .hobies-item
-        .hobies-text {
-        transform: translate(-55%, -50%);
-    }
-} */
-
-/* @media (max-width: 1100px) {
-    .about-me-conteyner
-        .about-me-content-box
-        .about-me-section
-        .about-me
-        .hobies
-        .hobies-item
-        .hobies-text {
-        transform: translate(-85%, -50%);
-        width: 50%;
-    }
-} */
 
 @media (max-width: 1000px) {
     .about-me-conteyner .about-me-content-box .background-about-me-photo {
@@ -214,44 +174,7 @@
         .about-me-text {
         width: 100%;
     }
-
-    /* .about-me-conteyner
-        .about-me-content-box
-        .about-me-section
-        .about-me
-        .hobies
-        .hobies-item
-        .hobies-text {
-        transform: translate(-58%, -50%);
-        width: 70%;
-    } */
 }
-
-/* @media (max-width: 900px) {
-    .about-me-conteyner
-        .about-me-content-box
-        .about-me-section
-        .about-me
-        .hobies
-        .hobies-item
-        .hobies-text {
-        transform: translate(-63%, -50%);
-        width: 70%;
-    }
-} */
-
-/* @media (max-width: 800px) {
-    .about-me-conteyner
-        .about-me-content-box
-        .about-me-section
-        .about-me
-        .hobies
-        .hobies-item
-        .hobies-text {
-        transform: translate(-55%, -50%);
-        width: 70%;
-    }
-} */
 
 @media (max-width: 700px) {
     .about-me-conteyner
@@ -261,44 +184,7 @@
         width: 300px;
         height: 300px;
     }
-
-    /* .about-me-conteyner
-        .about-me-content-box
-        .about-me-section
-        .about-me
-        .hobies
-        .hobies-item
-        .hobies-text {
-        transform: translate(-65%, -50%);
-        width: 70%;
-    } */
 }
-
-/* @media (max-width: 600px) {
-    .about-me-conteyner
-        .about-me-content-box
-        .about-me-section
-        .about-me
-        .hobies
-        .hobies-item
-        .hobies-text {
-        transform: translate(-52%, -50%);
-        width: 70%;
-    }
-} */
-
-/* @media (max-width: 560px) {
-    .about-me-conteyner
-        .about-me-content-box
-        .about-me-section
-        .about-me
-        .hobies
-        .hobies-item
-        .hobies-text {
-        transform: translate(-82%, -50%);
-        width: 50%;
-    }
-} */
 
 @media (max-width: 500px) {
     .about-me-conteyner
@@ -323,41 +209,4 @@
         height: 400px;
         margin: 0;
     }
-
-    /* .about-me-conteyner
-        .about-me-content-box
-        .about-me-section
-        .about-me
-        .hobies
-        .hobies-item
-        .hobies-text {
-        transform: translate(-72%, -50%);
-        width: 50%;
-    } */
 }
-
-/* @media (max-width: 450px) {
-    .about-me-conteyner
-        .about-me-content-box
-        .about-me-section
-        .about-me
-        .hobies
-        .hobies-item
-        .hobies-text {
-        transform: translate(-62%, -50%);
-        width: 50%;
-    }
-} */
-
-/* @media (max-width: 400px) {
-    .about-me-conteyner
-        .about-me-content-box
-        .about-me-section
-        .about-me
-        .hobies
-        .hobies-item
-        .hobies-text {
-        transform: translate(-97%, -50%);
-        width: 50%;
-    }
-} */

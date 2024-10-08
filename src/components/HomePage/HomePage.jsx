@@ -47,7 +47,7 @@ export const HomePage = () => {
                 />
 
                 <article className='brief-information-about-me'>
-                    <h1>Eduard Kozichuk</h1>
+                    <h1>Eduard Kozeichuk</h1>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit. Fuga ad laudantium rerum consequatur magni maiores
