@@ -156,7 +156,7 @@
     opacity: 1; /* Сделать текст видимым при наведении на родительский контейнер */
 }
 
-@media (max-width: 1400px) {
+/* @media (max-width: 1400px) {
     .about-me-conteyner
         .about-me-content-box
         .about-me-section
@@ -166,9 +166,9 @@
         .hobies-text {
         transform: translate(-55%, -50%);
     }
-}
+} */
 
-@media (max-width: 1100px) {
+/* @media (max-width: 1100px) {
     .about-me-conteyner
         .about-me-content-box
         .about-me-section
@@ -179,7 +179,7 @@
         transform: translate(-85%, -50%);
         width: 50%;
     }
-}
+} */
 
 @media (max-width: 1000px) {
     .about-me-conteyner .about-me-content-box .background-about-me-photo {
@@ -215,7 +215,7 @@
         width: 100%;
     }
 
-    .about-me-conteyner
+    /* .about-me-conteyner
         .about-me-content-box
         .about-me-section
         .about-me
@@ -224,10 +224,10 @@
         .hobies-text {
         transform: translate(-58%, -50%);
         width: 70%;
-    }
+    } */
 }
 
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
     .about-me-conteyner
         .about-me-content-box
         .about-me-section
@@ -238,9 +238,9 @@
         transform: translate(-63%, -50%);
         width: 70%;
     }
-}
+} */
 
-@media (max-width: 800px) {
+/* @media (max-width: 800px) {
     .about-me-conteyner
         .about-me-content-box
         .about-me-section
@@ -251,7 +251,7 @@
         transform: translate(-55%, -50%);
         width: 70%;
     }
-}
+} */
 
 @media (max-width: 700px) {
     .about-me-conteyner
@@ -262,7 +262,7 @@
         height: 300px;
     }
 
-    .about-me-conteyner
+    /* .about-me-conteyner
         .about-me-content-box
         .about-me-section
         .about-me
@@ -271,10 +271,10 @@
         .hobies-text {
         transform: translate(-65%, -50%);
         width: 70%;
-    }
+    } */
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
     .about-me-conteyner
         .about-me-content-box
         .about-me-section
@@ -285,9 +285,9 @@
         transform: translate(-52%, -50%);
         width: 70%;
     }
-}
+} */
 
-@media (max-width: 560px) {
+/* @media (max-width: 560px) {
     .about-me-conteyner
         .about-me-content-box
         .about-me-section
@@ -298,7 +298,7 @@
         transform: translate(-82%, -50%);
         width: 50%;
     }
-}
+} */
 
 @media (max-width: 500px) {
     .about-me-conteyner
@@ -324,7 +324,7 @@
         margin: 0;
     }
 
-    .about-me-conteyner
+    /* .about-me-conteyner
         .about-me-content-box
         .about-me-section
         .about-me
@@ -333,10 +333,10 @@
         .hobies-text {
         transform: translate(-72%, -50%);
         width: 50%;
-    }
+    } */
 }
 
-@media (max-width: 450px) {
+/* @media (max-width: 450px) {
     .about-me-conteyner
         .about-me-content-box
         .about-me-section
@@ -347,9 +347,9 @@
         transform: translate(-62%, -50%);
         width: 50%;
     }
-}
+} */
 
-@media (max-width: 400px) {
+/* @media (max-width: 400px) {
     .about-me-conteyner
         .about-me-content-box
         .about-me-section
@@ -360,4 +360,4 @@
         transform: translate(-97%, -50%);
         width: 50%;
     }
-}
+} */
