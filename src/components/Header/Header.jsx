@@ -31,7 +31,8 @@ function Header() {
     const routers = [
         { title: "Home Page", path: "/" },
         { title: "About me", path: "/about-me" },
-        { title: "CV", path: "#" },
+        { title: "My Gallery", path: "/gallery" },
+        { title: "CV", path: "/CV-and-CoverLetter" },
         { title: "Certificates", path: "#" },
         { title: "Contacts", path: "#" },
     ];
@@ -164,7 +165,7 @@ function Header() {
                                     to={routPage.path}
                                     style={{
                                         textDecoration: "none",
-                                        fontSize: "20px",
+                                        fontSize: "16px",
                                         color: "#fff",
                                     }}
                                 >

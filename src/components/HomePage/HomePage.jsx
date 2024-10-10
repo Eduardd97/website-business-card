@@ -16,7 +16,7 @@ export const HomePage = () => {
     const routers = [
         { title: "My Gallery", path: "/gallery" },
         { title: "About me", path: "/about-me" },
-        { title: "CV", path: "#" },
+        { title: "CV", path: "/CV-and-CoverLetter" },
         { title: "Certificates", path: "#" },
         { title: "Contacts", path: "#" },
     ];
@@ -47,7 +47,7 @@ export const HomePage = () => {
                 />
 
                 <article className='brief-information-about-me'>
-                    <h1>Eduard Kozeichuk</h1>
+                    <h1>Junior Front-end Developer</h1>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing
                         elit. Fuga ad laudantium rerum consequatur magni maiores
