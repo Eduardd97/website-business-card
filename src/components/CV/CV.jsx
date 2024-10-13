@@ -16,7 +16,7 @@ export const CV = () => {
     const updateZoom = () => {
         const screenWidth = window.innerWidth;
 
-        screenWidth < 550 ? setZoom(80) : setZoom(60);
+        screenWidth < 1500 ? setZoom(80) : setZoom(60);
     };
 
     useEffect (() => {

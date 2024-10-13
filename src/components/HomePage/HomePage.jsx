@@ -17,7 +17,7 @@ export const HomePage = () => {
         { title: "My Gallery", path: "/gallery" },
         { title: "About me", path: "/about-me" },
         { title: "CV", path: "/CV-and-CoverLetter" },
-        { title: "Certificates", path: "#" },
+        { title: "Certificates", path: "/certificates" },
         { title: "Contacts", path: "#" },
     ];
 

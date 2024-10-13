@@ -33,7 +33,7 @@ function Header() {
         { title: "About me", path: "/about-me" },
         { title: "My Gallery", path: "/gallery" },
         { title: "CV", path: "/CV-and-CoverLetter" },
-        { title: "Certificates", path: "#" },
+        { title: "Certificates", path: "/certificates" },
         { title: "Contacts", path: "#" },
     ];
 
