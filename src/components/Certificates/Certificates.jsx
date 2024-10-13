@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
@@ -22,26 +22,29 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import Button from "@mui/material/Button";
 
-import "./Certificates.css"
+import "./Certificates.css";
 
 // Массив объектов с данными сертификатов
 const certificates = [
     {
         image: hillel,
         title: "Hillel IT School",
-        description: "Сертифікат про проходження курсу 'Вступ до Python' у Hillel IT School.",
+        description:
+            "Сертифікат про проходження курсу 'Вступ до Python' у Hillel IT School.",
         file: HillelPDF, // Путь к PDF-файлу
     },
     {
         image: EnITStepPageOne,
         title: "Step IT Academy (English)",
-        description: "Сертифікат про завершення курсу Frontend Developer на англійській мові.",
+        description:
+            "Сертифікат про завершення курсу Frontend Developer на англійській мові.",
         file: EnITStepPDF, // Путь к PDF-файлу
     },
     {
         image: UkITStepPageOne,
         title: "Step IT Academy (Ukrainian)",
-        description: "Сертифікат про завершення курсу Frontend Developer українською мовою.",
+        description:
+            "Сертифікат про завершення курсу Frontend Developer українською мовою.",
         file: UkITStepPDF, // Путь к PDF-файлу
     },
 ];
@@ -49,6 +52,23 @@ const certificates = [
 export const Certificates = () => {
     const [open, setOpen] = useState(false);
     const [selectedCertificate, setSelectedCertificate] = useState(null);
+    const [divHeight, setDivHeight] = useState(window.innerHeight);
+
+    useEffect(() => {
+        const handleResize = () => {
+            const newHeight =
+                window.innerHeight < 900 ? 950 : window.innerHeight;
+            setDivHeight(newHeight);
+        };
+
+        // Добавляем слушателя события resize
+        window.addEventListener("resize", handleResize);
+
+        // Убираем слушателя события при размонтировании
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
 
     const handleClickOpen = (certificate) => {
         setSelectedCertificate(certificate);
@@ -61,12 +81,19 @@ export const Certificates = () => {
     };
 
     return (
-        <div className="certificate-conteyner">
+        <div className='certificate-conteyner'>
             <Header />
 
-            <div className='certificate-box'>
+            <div className='certificate-box' style={{ height: divHeight }}>
                 {certificates.map((certificate, i) => (
-                    <Card sx={{ maxWidth: 745, height:"max-content", position: 'relative' }} key={i}>
+                    <Card
+                        sx={{
+                            maxWidth: 745,
+                            height: "max-content",
+                            position: "relative",
+                        }}
+                        key={i}
+                    >
                         <CardActionArea>
                             <CardMedia
                                 component='img'
@@ -79,21 +106,28 @@ export const Certificates = () => {
                                 aria-label='settings'
                                 onClick={() => handleClickOpen(certificate)}
                                 sx={{
-                                  position: 'absolute',
-                                  top: 15,
-                                  right: 0,
-                                  zIndex: 1, // Чтобы кнопка была выше остальных элементов4
-                                  color: "black",
-                              }}
+                                    position: "absolute",
+                                    top: 15,
+                                    right: 0,
+                                    zIndex: 1, // Чтобы кнопка была выше остальных элементов4
+                                    color: "black",
+                                }}
                             >
                                 <MoreVertIcon />
                             </IconButton>
 
                             <CardContent>
-                                <Typography gutterBottom variant='h5' component='div'>
+                                <Typography
+                                    gutterBottom
+                                    variant='h5'
+                                    component='div'
+                                >
                                     {certificate.title}
                                 </Typography>
-                                <Typography variant='body2' sx={{ color: "text.secondary" }}>
+                                <Typography
+                                    variant='body2'
+                                    sx={{ color: "text.secondary" }}
+                                >
                                     {certificate.description}
                                 </Typography>
                             </CardContent>
@@ -110,21 +144,28 @@ export const Certificates = () => {
                             {selectedCertificate.title}
                         </DialogContentText>
                         <DialogContentText>
-                            Нажмите на одну из кнопок ниже, чтобы открыть или скачать сертификат.
+                            Нажмите на одну из кнопок ниже, чтобы открыть или
+                            скачать сертификат.
                         </DialogContentText>
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={() => window.open(selectedCertificate.file, "_blank")}>
+                        <Button
+                            onClick={() =>
+                                window.open(selectedCertificate.file, "_blank")
+                            }
+                        >
                             Открыть PDF
                         </Button>
-                        <Button onClick={() => {
-                            const link = document.createElement("a");
-                            link.href = selectedCertificate.file; // Путь к файлу
-                            link.setAttribute("download", ""); // Атрибут для скачивания
-                            document.body.appendChild(link);
-                            link.click(); // Симуляция клика по ссылке
-                            document.body.removeChild(link); // Удаление ссылки после скачивания
-                        }}>
+                        <Button
+                            onClick={() => {
+                                const link = document.createElement("a");
+                                link.href = selectedCertificate.file; // Путь к файлу
+                                link.setAttribute("download", ""); // Атрибут для скачивания
+                                document.body.appendChild(link);
+                                link.click(); // Симуляция клика по ссылке
+                                document.body.removeChild(link); // Удаление ссылки после скачивания
+                            }}
+                        >
                             Скачать PDF
                         </Button>
                         <Button onClick={handleClose}>Закрыть</Button>
