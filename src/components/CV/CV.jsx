@@ -1,11 +1,13 @@
+import { useEffect, useState } from "react";
+
 import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
 
 import "./CV.css";
 
-import CV_En from "../../assets/documents/Eduard_ CV.pdf";
-import Header from "../Header/Header";
+import CV_En from "../../assets/documents/Eduard-CV.pdf";
 import coverLetter_En from "../../assets/documents/Eduard-cover-letter.pdf";
-import { useEffect, useState } from "react";
+
 
 export const CV = () => {
     const [zoom, setZoom] = useState(60);
