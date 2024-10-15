@@ -34,10 +34,10 @@ function Header() {
         { title: "My Gallery", path: "/gallery" },
         { title: "CV", path: "/CV-and-CoverLetter" },
         { title: "Certificates", path: "/certificates" },
-        { title: "Contacts", path: "#" },
+        { title: "Contacts", path: "/contact-me" },
     ];
 
-    const aboutMeRoute = routers.find((route) => route.path === "#");
+    const aboutMeRoute = routers.find((route) => route.path === "/about-me");
 
     const homePage = routers.find((route) => route.path === "/");
 

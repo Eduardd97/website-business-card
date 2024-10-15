@@ -18,7 +18,7 @@ export const HomePage = () => {
         { title: "About me", path: "/about-me" },
         { title: "CV", path: "/CV-and-CoverLetter" },
         { title: "Certificates", path: "/certificates" },
-        { title: "Contacts", path: "#" },
+        { title: "Contacts", path: "/contact-me" },
     ];
 
     const [menuOpen, setMenuOpen] = useState(false);

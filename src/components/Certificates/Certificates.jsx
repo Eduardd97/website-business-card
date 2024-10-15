@@ -2,20 +2,15 @@ import { useState, useEffect } from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
-import hillel from "../../assets/certificates/Hillel-certificate.png";
-import EnITStepPageOne from "../../assets/certificates/Kozeichuk-En-IT-Step-certificate-page-1.jpg";
-import UkITStepPageOne from "../../assets/certificates/Козейчук-Укр-IT-Step-page-1.jpg";
-import HillelPDF from "../../assets/documents/Hillel.pdf";
-import EnITStepPDF from "../../assets/documents/Kozeichuk-En-IT-Step.pdf";
-import UkITStepPDF from "../../assets/documents/Козейчук-Укр-IT-Step.pdf";
+import certificates from "../../certificates";
 
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import CardActionArea from "@mui/material/CardActionArea";
-import IconButton from "@mui/material/IconButton";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
+// import IconButton from "@mui/material/IconButton";
+// import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
@@ -23,31 +18,6 @@ import DialogContentText from "@mui/material/DialogContentText";
 import Button from "@mui/material/Button";
 
 import "./Certificates.css";
-
-// Массив объектов с данными сертификатов
-const certificates = [
-    {
-        image: hillel,
-        title: "Hillel IT School",
-        description:
-            "Сертифікат про проходження курсу 'Вступ до Python' у Hillel IT School.",
-        file: HillelPDF,
-    },
-    {
-        image: EnITStepPageOne,
-        title: "Step IT Academy (English)",
-        description:
-            "Сертифікат про завершення курсу Frontend Developer на англійській мові.",
-        file: EnITStepPDF,
-    },
-    {
-        image: UkITStepPageOne,
-        title: "Step IT Academy (Ukrainian)",
-        description:
-            "Сертифікат про завершення курсу Frontend Developer українською мовою.",
-        file: UkITStepPDF,
-    },
-];
 
 export const Certificates = () => {
     const [open, setOpen] = useState(false);
@@ -57,7 +27,8 @@ export const Certificates = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            const newHeight = window.innerHeight < 900 ? 950 : window.innerHeight;
+            const newHeight =
+                window.innerHeight < 900 ? 950 : window.innerHeight;
             setDivHeight(newHeight);
             setContentLoaded(true); // Устанавливаем состояние в true после вычисления высоты
         };
@@ -99,28 +70,27 @@ export const Certificates = () => {
                             }}
                             key={i}
                         >
-                            <CardActionArea>
+                            {/* <IconButton
+                                aria-label='settings'
+                                sx={{
+                                    position: "absolute",
+                                    top: 15,
+                                    right: 0,
+                                    zIndex: 1,
+                                    color: "black",
+                                }}
+                            >
+                                <MoreVertIcon />
+                            </IconButton> */}
+                            <CardActionArea
+                                onClick={() => handleClickOpen(certificate)}
+                            >
                                 <CardMedia
                                     component='img'
                                     height='140'
                                     image={certificate.image}
                                     alt={certificate.title}
                                 />
-
-                                <IconButton
-                                    aria-label='settings'
-                                    onClick={() => handleClickOpen(certificate)}
-                                    sx={{
-                                        position: "absolute",
-                                        top: 15,
-                                        right: 0,
-                                        zIndex: 1,
-                                        color: "black",
-                                    }}
-                                >
-                                    <MoreVertIcon />
-                                </IconButton>
-
                                 <CardContent>
                                     <Typography
                                         gutterBottom
@@ -150,7 +120,8 @@ export const Certificates = () => {
                             {selectedCertificate.title}
                         </DialogContentText>
                         <DialogContentText>
-                            Нажмите на одну из кнопок ниже, чтобы открыть или скачать сертификат.
+                            Нажмите на одну из кнопок ниже, чтобы открыть или
+                            скачать сертификат.
                         </DialogContentText>
                     </DialogContent>
                     <DialogActions>
@@ -164,7 +135,7 @@ export const Certificates = () => {
                         <Button
                             onClick={() => {
                                 const link = document.createElement("a");
-                                link.href = selectedCertificate.file; 
+                                link.href = selectedCertificate.file;
                                 link.setAttribute("download", "");
                                 document.body.appendChild(link);
                                 link.click();
