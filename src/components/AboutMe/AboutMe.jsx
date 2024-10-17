@@ -33,33 +33,49 @@ export const AboutMe = () => {
                             alt='my avatar'
                         />
                         <div className='about-me'>
-                            <p className='about-me-text'>
-                                Lorem, ipsum dolor sit amet consectetur
-                                adipisicing elit. Facere in, ratione a adipisci
-                                eveniet molestiae, repudiandae doloribus quis
-                                iure corporis nisi deleniti doloremque amet
-                                culpa officia tempora. Tempora, minima nesciunt!
-                                Animi pariatur iste provident expedita ut magnam
-                                repudiandae quae rem, fugit accusamus fugiat
-                                blanditiis odio, necessitatibus aperiam laborum
-                                ad deleniti veritatis! Dolor placeat pariatur
-                                officiis possimus rerum sapiente, expedita rem.
-                                Excepturi et tempore debitis natus, ipsum
-                                voluptatum, eos voluptas eligendi sunt vel alias
-                                doloribus praesentium harum. Suscipit laudantium
-                                debitis numquam laboriosam odio blanditiis
-                                itaque deleniti quaerat sequi. Dicta, veritatis
-                                exercitationem. Nihil voluptates atque possimus
-                                harum nemo est. Exercitationem placeat minima,
-                                cum maxime perferendis mollitia architecto
-                                possimus repellat, natus ab magnam incidunt.
-                                Beatae magni officia asperiores itaque assumenda
-                                atque est quod. Minima blanditiis nostrum
-                                quisquam ut modi dignissimos, eos molestias
-                                nulla, corporis odit laborum consequatur,
-                                expedita officia. Deserunt possimus sed sunt
-                                quos eveniet aliquam! Aperiam iste minima alias
-                                aliquam veniam at!
+                            <p className='about-me-text' style={{fontSize:"20px"}}>
+                                Hi, my name is Eduard, and I’m currently looking
+                                for my first commercial experience as a Frontend
+                                Developer. My journey into web development began
+                                with a few years of self-study in HTML and CSS,
+                                where I gained confidence in building static
+                                websites. However, learning JavaScript
+                                independently was more challenging, which led me
+                                to seek formal education. 
+                                <br />
+                                <br />
+                                I completed a 3-month
+                                &quot;Introduction to Python&quot; course at Hillel IT
+                                School, which was a fascinating experience and
+                                gave me a good foundational understanding of
+                                programming. While Python was engaging, I found
+                                frontend development more appealing because I
+                                enjoy seeing the visual outcome of my work in
+                                the form of interactive websites and landing
+                                pages. 
+                                <br />
+                                <br />
+                                I then enrolled in the Frontend Developer
+                                course at IT Step Academy, where I spent a year
+                                gaining comprehensive knowledge in HTML, CSS,
+                                JavaScript, and modern tools like React,
+                                TypeScript, and Angular. I’m particularly
+                                passionate about React for its flexibility in
+                                creating dynamic user interfaces. Additionally,
+                                I’ve acquired basic skills in Node.js, giving me
+                                a broader understanding of full-stack
+                                development.
+                                <br />
+                                <br />
+                                On a personal note, I’m a huge fan
+                                of anime, especially &quot;Bleach&quot; and &quot;Demon
+                                Slayer.&quot; I also enjoy following tech trends and
+                                improving my skills through hands-on projects in
+                                my free time. My previous work as a sales
+                                consultant and in construction has helped me
+                                develop valuable soft skills like teamwork,
+                                attention to detail, and problem-solving, all of
+                                which I apply in my development process.
                             </p>
 
                             <h3 className='hobie-title'>Hobies:</h3>

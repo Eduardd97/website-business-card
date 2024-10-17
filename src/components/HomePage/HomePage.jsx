@@ -49,11 +49,13 @@ export const HomePage = () => {
                 <article className='brief-information-about-me'>
                     <h1>Junior Front-end Developer</h1>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Fuga ad laudantium rerum consequatur magni maiores
-                        consequuntur officiis dignissimos reiciendis distinctio?
-                        Vel debitis esse soluta nihil deserunt ullam eos quod
-                        doloribus.
+                        Currently seeking a remote position as a Junior Frontend
+                        Developer. I am open to both full-time opportunities and
+                        paid internships. I would also consider an unpaid
+                        internship with flexible hours that would allow me to
+                        balance it with my current work. I am eager to take on
+                        new challenges and apply my skills to developing modern
+                        web applications.
                     </p>
                 </article>
             </div>

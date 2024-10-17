@@ -112,6 +112,16 @@ export const Gallery = () => {
                     </ul>
                 </li>
             </ul>
+
+            <h3>Languages</h3>
+            <ul className='languages'>
+                <li>Ukrainian — native</li>
+                <li>Russian — fluent</li>
+                <li>English — currently taking courses</li>
+                <li>
+                    Polish — conversational, sufficient for work (self-taught)
+                </li>
+            </ul>
         </div>
     );
 
@@ -166,7 +176,14 @@ export const Gallery = () => {
                 <div className='gallery-box'>
                     <Carousel slides={slides} />
 
-                    <h2 style={{color: "#fff", borderBottom: "1px solid #fff"}}>My projects</h2>
+                    <h2
+                        style={{
+                            color: "#fff",
+                            borderBottom: "1px solid #fff",
+                        }}
+                    >
+                        My projects
+                    </h2>
 
                     <div className='my-portfolio'>
                         {currentProjects.map((project, index) => (
@@ -181,7 +198,10 @@ export const Gallery = () => {
                                         className='link-icon'
                                     />
                                 </a>
-                                <section className='site-description-box'>
+                                <section
+                                    className='site-description-box'
+                                    style={{ textAlign: "justify" }}
+                                >
                                     <p className='site-description'>
                                         {project.description}
                                     </p>

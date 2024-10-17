@@ -14,12 +14,12 @@
     color: #fff;
 }
 
-.gallery-skills-box .profession {
+.gallery-skills-box .profession, .languages {
     padding: 0 0 0 15px;
     font-size: 18px;
 }
 
-.gallery-skills-box .profession li {
+.gallery-skills-box .profession li, .languages li {
     padding: 0 0 10px 0;
 }
 
