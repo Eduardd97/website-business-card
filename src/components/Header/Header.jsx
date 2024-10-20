@@ -37,7 +37,11 @@ function Header() {
         { title: "Contacts", path: "/contact-me" },
     ];
 
-    const aboutMeRoute = routers.find((route) => route.path === "/about-me");
+    const adminRouter = [
+        {title: "Admin-Page", path: "/admin-login-page"}
+    ]
+
+    const aboutMeRoute = adminRouter.find((route) => route.path === "/admin-login-page");
 
     const homePage = routers.find((route) => route.path === "/");
 

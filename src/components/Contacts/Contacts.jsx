@@ -21,6 +21,11 @@ export const Contacts = () => {
     const [open, setOpen] = useState(false);
     const [dialogContent, setDialogContent] = useState(""); // Состояние для хранения содержимого диалога
 
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+
     const handleClickOpen = (content) => {
         setDialogContent(content); // Устанавливаем содержимое диалога
         setOpen(true);
@@ -29,6 +34,49 @@ export const Contacts = () => {
     const handleClose = () => {
         setOpen(false);
     };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault(); // Предотвращаем стандартное поведение формы
+
+        try {
+            const response = await fetch(
+                "http://localhost:5000/api/message_me",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        firstName,
+                        lastName,
+                        email,
+                        message,
+                    }),
+                }
+            );
+
+            if (response.ok) {
+                const data = await response.json();
+                console.log("Сообщение отправлено:", data);
+                // Выводим данные сообщения в диалоговом окне
+                handleClickOpen(`Сообщение от ${data.firstName} ${data.lastName} (${data.email}): ${data.message}`);
+                
+                // Очищаем форму
+                setFirstName("");
+                setLastName("");
+                setEmail("");
+                setMessage("");
+            } else {
+                const errorData = await response.json();
+                console.error(errorData.error);
+                // Обработка ошибки
+                handleClickOpen(`Ошибка: ${errorData.error}`);
+            }
+        } catch (error) {
+            console.error("Error sending message", error);
+            handleClickOpen("Ошибка отправки сообщения. Пожалуйста, попробуйте позже.");
+        }
+    }; // Закрывающая скобка для функции handleSubmit
 
     return (
         <div className='contacts-container'>
@@ -86,11 +134,13 @@ export const Contacts = () => {
                     Message Me
                 </h2>
 
-                <div className='contact-form'>
+                <form className='contact-form' onSubmit={handleSubmit}>
                     <TextField
-                        id='filled-textarea'
+                        id='filled-first-name'
                         label='First Name'
                         placeholder='Eduard'
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
                         multiline
                         variant='filled'
                         sx={{
@@ -102,9 +152,11 @@ export const Contacts = () => {
                         }}
                     />
                     <TextField
-                        id='filled-textarea'
+                        id='filled-last-name'
                         label='Last Name'
                         placeholder='Kozeichuk'
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
                         multiline
                         variant='filled'
                         sx={{
@@ -116,9 +168,11 @@ export const Contacts = () => {
                         }}
                     />
                     <TextField
-                        id='filled-textarea'
+                        id='filled-email'
                         label='Your Email'
                         placeholder='email@gmail.com'
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         multiline
                         variant='filled'
                         sx={{
@@ -129,13 +183,13 @@ export const Contacts = () => {
                             },
                         }}
                     />
-
                     <TextField
-                        id='filled-multiline-static'
-                        label='Multiline'
+                        id='filled-message'
+                        label='Message'
                         multiline
                         rows={4}
-                        defaultValue='Default Value'
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
                         variant='filled'
                         sx={{
                             backgroundColor: "#5b5b5b",
@@ -149,10 +203,11 @@ export const Contacts = () => {
                         variant='contained'
                         endIcon={<SendIcon />}
                         sx={{ width: 150, height: 50 }}
+                        type='submit' // Обязательно добавьте type="submit" для кнопки
                     >
                         Send
                     </Button>
-                </div>
+                </form>
             </div>
 
             <Dialog
@@ -160,7 +215,9 @@ export const Contacts = () => {
                 onClose={handleClose}
                 aria-labelledby='contact-info-dialog-title'
             >
-                <DialogTitle id='contact-info-dialog-title'>Contact Info</DialogTitle>
+                <DialogTitle id='contact-info-dialog-title'>
+                    Contact Info
+                </DialogTitle>
                 <DialogContent>
                     <DialogContentText>{dialogContent}</DialogContentText>
                 </DialogContent>

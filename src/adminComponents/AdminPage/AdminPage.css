@@ -1,0 +1,9 @@
+.admin-page-container {
+    height: 100vh; /* или установите вашу высоту по умолчанию */
+}
+
+@media (max-height: 700px) {
+    .admin-page-container {
+        height: auto; /* Сброс высоты при высоте окна менее 700px */
+    }
+}
